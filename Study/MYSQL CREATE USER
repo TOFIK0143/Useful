@@ -1,0 +1,26 @@
+
+// to open the mysql server
+  sudo mysql -u root
+  
+// to create database 
+	CREATE DATABASE db_connect;
+	
+// to switch on that database 
+	USE db_connect;
+
+// for create user on databse
+	CREATE USER 'splunk_user'@localhost IDENTIFIED BY 'Tofik@0143';
+	
+// for creating the db_connect on local host
+	GRANT ALL PRIVILEGES ON db_connect.* TO 'splunk_user'@'localhost';
+	
+	
+	
+// uninstalling the mysql application
+
+sudo systemctl status mysql
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+sudo apt-get autoremove
+sudo rm -rf /etc/mysql /var/lib/mysql
+sudo apt-get autoclean
+sudo apt-get purge mysql/*
